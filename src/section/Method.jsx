@@ -3,8 +3,8 @@ export default function Method() {
   return (
     <section className="m2">
       <picture className="m2-media">
-        <source media="(max-width: 767px)" srcSet="/method-left-mobile.jpg" />
-        <img className="m2-bg" src="/method-left.jpg" alt="Programa de 90 días" />
+        <source media="(max-width: 767px)" srcSet="/method-mobile.jpg" />
+        <img className="m2-bg" src="/method-desktop.jpg" alt="Programa de 90 días" />
       </picture>
 
       <div className="m2-fade" />
