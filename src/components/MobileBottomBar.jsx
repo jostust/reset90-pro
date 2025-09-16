@@ -39,7 +39,7 @@ export default function MobileBottomBar() {
                   <a href="#faqs" onClick={()=>setOpen(false)} className="py-2 border-b border-line">FAQs</a>
                   <a href="#blog" onClick={()=>setOpen(false)} className="py-2">Blog</a>
                 </nav>
-                <a href="https://wa.me/XXXXXXXXXXX" target="_blank"
+                <a href="/register" target="_blank"
                    className="mt-5 inline-flex w-full items-center justify-center bg-[#F7A9B8] text-black font-extrabold rounded-xl px-5 py-3">
                   JOIN NOW
                 </a>
