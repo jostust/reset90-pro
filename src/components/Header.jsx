@@ -15,7 +15,7 @@ export default function Header() {
             <a key={n.label} href={n.href} className="hover:opacity-100 opacity-80">{n.label}</a>
           ))}
         </nav>
-        <a href="https://wa.me/+529981535113" target="_blank"
+        <a href="/register" target="_blank"
            className="bg-[#F7A9B8] text-black font-extrabold rounded-xl px-5 py-2">
           Comenzar ahora
         </a>
