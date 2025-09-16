@@ -7,7 +7,7 @@ export default function HeroTop() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/heroleft.jpg')", // ← si tu archivo tiene otro nombre, cámbialo aquí
+          backgroundImage: "url('/hero-left.jpg')", // ← si tu archivo tiene otro nombre, cámbialo aquí
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
