@@ -8,17 +8,18 @@ import Header from "./components/Header.jsx";
 import HeroTop from "./section/HeroTop.jsx";
 import MobileBottomBar from "./components/MobileBottomBar.jsx";
 import Register from "./pages/Register.jsx";
+import Method from "./section/Method.jsx";
 
 function HomePage() {
   return (
     <>
       <Header />
       <HeroTop />
+      <Method />   {/* ← NUEVO BLOQUE */}
       <MobileBottomBar />
     </>
   );
 }
-
 function App() {
   return (
     <LazyMotion features={domAnimation}>
