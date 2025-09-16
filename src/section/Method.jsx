@@ -2,21 +2,14 @@
 export default function Method() {
   return (
     <section className="m2">
-      {/* Imagen responsive (desktop / mobile) */}
       <picture className="m2-media">
-        <source media="(max-width: 767px)" srcSet="/method-mobile.jpg" />
-        <img
-          className="m2-bg"
-          src="/method-desktop.jpg"
-          alt="Programa de 90 días – entrenamientos diarios"
-        />
+        <source media="(max-width: 767px)" srcSet="/method-left-mobile.jpg" />
+        <img className="m2-bg" src="/method-left.jpg" alt="Programa de 90 días" />
       </picture>
 
-      {/* Fade/overlay */}
       <div className="m2-fade" />
 
-      {/* Contenido */}
-      <div className="m2-inner container-outer">
+      <div className="m2-inner">
         <div className="m2-grid">
           <div className="m2-copy">
             <h2 className="m2-h1">
@@ -29,25 +22,25 @@ export default function Method() {
               </span>
             </h2>
           </div>
-
-          {/* Cinta diagonal */}
-          <div className="m2-ribbon">
-            <div className="m2-ribbon-inner">
-              <div>
-                <div className="m2-ribbon-title">Consíguelo ahora</div>
-                <div className="m2-ribbon-sub">Desde $250/sesión · Cancela cuando quieras</div>
-              </div>
-              <a className="m2-ribbon-cta" href="/register">COMENZAR AHORA</a>
-            </div>
-          </div>
-
-          {/* Texto corto debajo */}
-          <p className="m2-body">
-            Entrena, aliméntate y transforma tus hábitos con un método diseñado para que
-            cada día avances hacia la mejor versión de ti misma.
-          </p>
         </div>
       </div>
+
+      {/* Cinta diagonal */}
+      <div className="m2-ribbon">
+        <div className="m2-ribbon-inner">
+          <div>
+            <div className="m2-ribbon-title">Consíguelo ahora</div>
+            <div className="m2-ribbon-sub">Desde $250/sesión · Cancela cuando quieras</div>
+          </div>
+          <a className="m2-ribbon-cta" href="/register">COMENZAR AHORA</a>
+        </div>
+      </div>
+
+      {/* Texto corto debajo */}
+      <p className="m2-body">
+        Entrena, aliméntate y transforma tus hábitos con un método diseñado para que cada día avances
+        hacia la mejor versión de ti misma.
+      </p>
     </section>
   );
 }
