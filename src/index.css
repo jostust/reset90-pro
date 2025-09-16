@@ -167,3 +167,56 @@
   .ribbon-full{ transform: translateX(-50%) rotate(-4deg); width: 135vw; }
   .ribbon-card{ transform: rotate(4deg); }
 }
+/* ===== Imagen de fondo en Method */
+.method-img{
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.02) contrast(1.02);
+}
+
+/* Fade correcto sobre imagen (suave y largo) */
+.method-fade-right{
+  background: linear-gradient(90deg,
+    rgba(247,169,184,0) 0%,
+    rgba(247,169,184,.50) 40%,
+    rgba(247,169,184,.90) 68%,
+    rgba(247,169,184,1) 84%,
+    rgba(247,169,184,1) 100%);
+}
+
+/* Títulos grandes estilo Alexia (fluido + outline grueso) */
+.title-xxl{ font-size: clamp(2.3rem, 3.2vw + 1rem, 4.1rem); line-height: 1.02; }
+.title-outline{
+  -webkit-text-stroke: 2.6px rgba(255,255,255,.78);
+  text-stroke: 2.6px rgba(255,255,255,.78);
+  color: transparent;
+  letter-spacing: .01em;
+}
+.title-shadow{ text-shadow: 0 2px 10px rgba(0,0,0,.14); }
+
+/* Cinta diagonal a pantalla completa (full-bleed) */
+.ribbon-full{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%) rotate(-6deg);
+  width: 128vw;                 /* se sale para asegurar bleed */
+  background: #0f1417;
+  color:#fff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 20px 48px rgba(0,0,0,.55);
+}
+.ribbon-line{ height:1px; background:rgba(255,255,255,.25); margin-top:10px; }
+.ribbon-card{
+  background:#fff; color:#111; border-radius:10px; padding:14px 18px;
+  font-weight:800; display:inline-block; transform: rotate(6deg);
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* Responsive: tamaños y ángulos en móvil */
+@media (max-width: 767px){
+  .title-xxl{ font-size: clamp(1.9rem, 4.8vw + 1rem, 2.7rem); }
+  .title-outline{ -webkit-text-stroke: 2.1px rgba(255,255,255,.86); text-stroke: 2.1px rgba(255,255,255,.86); }
+  .ribbon-full{ transform: translateX(-50%) rotate(-4deg); width: 138vw; }
+  .ribbon-card{ transform: rotate(4deg); }
+}
