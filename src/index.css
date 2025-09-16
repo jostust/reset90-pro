@@ -44,176 +44,118 @@
 .btn-pink:hover{ filter:brightness(1.05); transform:translateY(-1px); transition:.15s; }
 .chev{ width:28px; height:28px; border-right:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(45deg); opacity:.7; }
 
-/* ===== METHOD (bloque 2) – Consolidado ===== */
-
-/* Contenedor del bloque */
+/* ======= METHOD v2 (parche) ======= */
 .m2{
-  min-height: 640px;
-  background: #f4aeb7; /* rosa base bajo el fade */
   position: relative;
+  min-height: 120vh;              /* da altura para que quepa la diagonal */
+  overflow: hidden;
+  isolation: isolate;             /* capa propia de z-index */
 }
 
-/* Imagen de fondo */
+/* Imagen a pantalla completa, anclada a la IZQUIERDA */
+.m2-media{ position:absolute; inset:0; }
 .m2-bg{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left center;
-  display: block;
-  min-height: 640px;
-  filter: saturate(1.02) contrast(1.02);
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:left center;    /* fuerza el peso visual al lado izquierdo */
+  filter: saturate(0.95);
 }
 
-/* Gradiente/fade de izq→der (oscuro a rosa) */
+/* Fade suave, de oscuro a rosa (mejor legibilidad del texto) */
 .m2-fade{
-  position: absolute; inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    rgba(16,19,20,0.85) 0%,
-    rgba(16,19,20,0.40) 25%,
-    rgba(244,174,183,0.55) 52%,
-    rgba(244,174,183,0.90) 100%
-  );
+  position:absolute; inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 28%, rgba(247,169,184,.55) 55%, rgba(247,169,184,.9) 100%);
 }
 
-/* Capa de contenido sobre la imagen+fade */
+/* Contenido principal (título) */
 .m2-inner{
   position: relative;
   z-index: 2;
+  padding-top: clamp(80px, 12vh, 160px);
+  padding-inline: clamp(16px, 4vw, 56px);
+  padding-bottom: clamp(220px, 22vh, 280px); /* deja espacio para la diagonal */
 }
 
-/* Grid del título */
 .m2-grid{
   display: grid;
   grid-template-columns: 1fr;
-  padding-top: clamp(72px, 10vw, 140px);
-  padding-bottom: clamp(48px, 6vw, 72px);
-  padding-left: min(6vw, 48px);
-  padding-right: min(6vw, 48px);
+  gap: 24px;
 }
 
-/* Texto del titular */
-.m2-copy{ max-width: 860px; }
-
-/* Titular “sólido” */
-.m2-h1{
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: .2px;
-  color: #0f1112;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.08);
-  font-size: clamp(28px, 5.2vw, 64px);
-}
-
-/* Líneas outline bajo el sólido */
-.m2-h1-outline{
-  display: block;
-  margin-top: .25em;
-  font-weight: 900;
-  letter-spacing: .5px;
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(255,255,255,0.78);
-}
-
-/* Cinta diagonal full-bleed */
-.m2-ribbon{
-  position: relative;
-  z-index: 3;
-  margin-top: clamp(8px, 2vw, 24px);
-  width: 120vw;
-  left: 50%;
-  transform: translateX(-50%) rotate(-7deg);
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,.35));
-}
-
-/* Cuerpo de la cinta */
-.m2-ribbon-inner{
-  background: #131819;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.08);
-  padding: 18px 22px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: clamp(12px, 2vw, 18px);
-}
-
-/* Título/sub de la cinta */
-.m2-ribbon-title{
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: .8px;
-  color: #eaeff2;
-  font-size: clamp(14px, 2.2vw, 22px);
-}
-.m2-ribbon-sub{
-  margin-top: 6px;
-  opacity: .85;
-  color: #d8dee2;
-  font-size: clamp(12px, 1.6vw, 15px);
-}
-
-/* Botón blanco dentro de la cinta */
-.m2-ribbon-cta{
-  background: #fff;
-  color: #0f1112;
-  border-radius: 10px;
-  padding: 14px 22px;
-  font-weight: 900;
-  font-size: clamp(12px, 2vw, 18px);
-  box-shadow: 0 5px 0 rgba(0,0,0,.15);
-  transform: rotate(6deg);
-  transition: transform .15s ease, filter .15s ease;
-  white-space: nowrap;
-}
-.m2-ribbon-cta:hover{ filter: brightness(.98); transform: rotate(6deg) translateY(-1px); }
-
-/* Texto descriptivo */
-.m2-body{
-  color: #0f1112;
-  font-size: clamp(14px, 1.4vw, 18px);
-  max-width: 920px;
-  opacity: .92;
-  margin-top: clamp(18px, 2vw, 24px);
-}
-
-/* ===== Mobile ===== */
-@media (max-width: 767px){
-  .m2{ min-height: 740px; }
-  .m2-bg{ min-height: 740px; object-position: center 26%; }
-  .m2-fade{
-    background: linear-gradient(
-      90deg,
-      rgba(16,19,20,0.80) 0%,
-      rgba(16,19,20,0.35) 32%,
-      rgba(244,174,183,0.85) 100%
-    );
-    /* --- parche de layout para Method (m2) --- */
-
-/* evita que se vea nada fuera de la diagonal */
-.m2 { overflow: hidden; }
-
-/* que la imagen cubra 100% y no deje franjas */
-.m2-media { position: absolute; inset: 0; }
-.m2-bg { position: absolute; inset: 0; width: 100%; height: 100%; }
-
-/* grid a la derecha en desktop */
 @media (min-width: 1024px){
   .m2-grid{
-    grid-template-columns: 1fr 1fr;
-    padding-left: min(6vw, 48px);
-    padding-right: min(6vw, 48px);
+    grid-template-columns: 1.1fr 1fr;   /* imagen a la izq, copy a la der */
   }
-  .m2-copy, .m2-ribbon, .m2-body { grid-column: 2; }
+  .m2-copy{ grid-column: 2; }           /* SIEMPRE a la derecha en desktop */
 }
 
-/* diagonal más ancha para que tape de lado a lado */
-.m2-ribbon{ width: 160vw; transform: translateX(-50%) rotate(-7deg); }
-  }
-  .m2-h1{ font-size: clamp(26px, 8vw, 40px); }
-  .m2-h1-outline{ -webkit-text-stroke: 1.6px rgba(255,255,255,0.86); }
-  .m2-ribbon{ width: 140vw; transform: translateX(-50%) rotate(-5.5deg); }
-  .m2-ribbon-inner{ grid-template-columns: 1fr; }
-  .m2-ribbon-cta{ align-self: start; transform: rotate(4deg); }
+/* Tipos (usa tus utilidades existentes si ya las tienes) */
+.m2-h1{
+  font-weight: 800;
+  line-height: 1.05;
+  font-size: clamp(36px, 5vw, 64px);
+  color: #0f0f0f;                       /* casi negro */
+  text-shadow: 0 1px 0 rgba(255,255,255,.04);
+  margin: 0;
+}
+.m2-h1-outline{
+  display:inline-block;
+  margin-top: .25em;
+  font-weight: 900;
+  letter-spacing: .02em;
+  font-size: .9em;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,.85);  /* outline blanco */
+  text-stroke: 2px rgba(255,255,255,.85);
+}
+
+/* Cinta diagonal centrada y contenida en la sección */
+.m2-ribbon{
+  position:absolute;
+  left:50%;
+  top: clamp(58%, 58vh, 64%);          /* altura media de la sección */
+  transform: translateX(-50%) rotate(-6deg);
+  width: 115vw;                        /* cubre de lado a lado sin “desbordar” mucho */
+  z-index: 3;
+  pointer-events: none;                /* la capa NO intercepta clicks... */
+}
+.m2-ribbon-inner{
+  pointer-events: auto;                /* ...salvo el interior (el botón sí) */
+  background:#161b1b;
+  border-radius: 14px;
+  box-shadow: 0 24px 40px rgba(0,0,0,.35);
+  display:flex; align-items:center; gap:18px;
+  padding: 18px 22px;
+  max-width: 980px; margin: 0 auto;
+}
+.m2-ribbon-title{ font-weight: 800; letter-spacing:.02em; color:#fff; }
+.m2-ribbon-sub{ font-size:.9rem; opacity:.75; color:#fff; }
+.m2-ribbon-cta{
+  margin-left:auto;
+  background:#fff; color:#111; font-weight:900;
+  padding:.9rem 1.2rem; border-radius:10px; text-decoration:none;
+  transform: rotate(6deg);             /* compensación óptica de la diagonal */
+}
+
+/* Texto corto debajo (separado de la cinta) */
+.m2-body{
+  position: relative;
+  z-index: 1;
+  margin: clamp(24px, 5vh, 48px) clamp(16px, 4vw, 56px) 0;
+  max-width: 860px;
+  color: rgba(0,0,0,.85);
+  font-size: clamp(16px, 2.1vw, 20px);
+}
+
+/* MÓVIL: centramos título y movemos aún más a la izquierda el foco de la imagen */
+@media (max-width: 767px){
+  .m2-h1{ text-align:left; font-size: clamp(32px, 9vw, 42px); }
+  .m2-h1-outline{ -webkit-text-stroke-width: 1.5px; text-stroke-width: 1.5px; }
+  .m2-bg{ object-position: 18% 45%; }   /* mete el sujeto más al borde izq */
+  .m2-ribbon{ top: 64%; width: 125vw; } /* un pelín más abajo y ancha */
+  .m2-ribbon-inner{ gap:12px; }
+  .m2-ribbon-cta{ padding:.8rem 1rem; }
 }
