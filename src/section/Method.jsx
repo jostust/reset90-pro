@@ -7,11 +7,9 @@ export default function Method() {
       <div className="absolute inset-0 pointer-events-none">
         {/* Desktop: imagen ocupa ~62% izquierda */}
         <div
-          className="hidden md:block absolute inset-y-0 left-0 w-[62%] method-img"
-          style={{
-            backgroundImage: "url('/method-left.jpg')",
-          }}
-        />
+  className="absolute inset-0 md:inset-y-0 md:left-0 md:w-[62%] method-img"
+  style={{ backgroundImage: "url('/method-left.jpg')" }}
+/>
         {/* Mobile: imagen full */}
         <div
           className="block md:hidden absolute inset-0 method-img"
