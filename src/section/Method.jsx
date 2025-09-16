@@ -3,46 +3,46 @@ import { m } from "framer-motion";
 export default function Method() {
   return (
     <section id="metodo" className="bg-[#0f1417] text-white border-t border-line">
-     <div className="relative">
-  {/* Imagen desktop */}
-  <div
-    className="hidden md:block rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,.45)] border border-white/5 min-h-[320px] md:min-h-[520px]"
-    style={{
-      backgroundImage: "url('/method-left.jpg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center"
-    }}
-    aria-label="Entrenamiento dinámico Aleph Motion"
-  />
+      <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-10 items-center px-4 py-16 md:py-24">
+        {/* Imagen izquierda: desktop + mobile */}
+        <div className="relative">
+          <div
+            className="hidden md:block rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,.45)] border border-white/5 min-h-[520px]"
+            style={{
+              backgroundImage: "url('/method-left.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+            aria-label="Entrenamiento dinámico Aleph Motion"
+          />
+          <div
+            className="block md:hidden rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,.45)] border border-white/5 min-h-[280px]"
+            style={{
+              backgroundImage: "url('/method-left-mobile.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+            aria-label="Entrenamiento dinámico Aleph Motion"
+          />
+        </div>
 
-  {/* Imagen mobile */}
-  <div
-    className="block md:hidden rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,.45)] border border-white/5 min-h-[280px]"
-    style={{
-      backgroundImage: "url('/method-left-mobile.jpg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center"
-    }}
-    aria-label="Entrenamiento dinámico Aleph Motion"
-  />
-</div>
         {/* Texto derecha */}
         <div>
           <m.h2
-            initial={{opacity:0, y:10}}
-            whileInView={{opacity:1, y:0}}
-            viewport={{once:true, amount:.4}}
-            transition={{duration:.5}}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-extrabold tracking-wide mb-4"
           >
             Un método que <span className="text-[#F7A9B8]">transforma</span>
           </m.h2>
 
           <m.p
-            initial={{opacity:0, y:8}}
-            whileInView={{opacity:1, y:0}}
-            viewport={{once:true, amount:.4}}
-            transition={{delay:.05, duration:.45}}
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ delay: 0.05, duration: 0.45 }}
             className="text-white/85 leading-relaxed mb-6"
           >
             Este programa de 90 días combina entrenamientos dinámicos, nutrición práctica
@@ -65,16 +65,12 @@ export default function Method() {
             </li>
           </ul>
 
-          <m.a
-            href="/register"  /* si cambias a BrowserRouter, cámbialo a "/register" */
-            initial={{opacity:0, y:8}}
-            whileInView={{opacity:1, y:0}}
-            viewport={{once:true, amount:.5}}
-            transition={{delay:.1}}
+          <a
+            href="/register"
             className="btn-pink"
           >
             Conoce cómo funciona
-          </m.a>
+          </a>
         </div>
       </div>
     </section>
