@@ -30,3 +30,16 @@
 .carousel-track{ scroll-snap-type:x mandatory; display:flex; overflow-x:auto; gap:16px; }
 .carousel-slide{ scroll-snap-align:center; min-width: 100%; }
 @media (min-width: 1024px){ .carousel-slide{ min-width: 100%; } }
+
+/* === UTILIDADES PARA EL HERO === */
+.outline-text{
+  -webkit-text-stroke: 2px rgba(255,255,255,0.35);
+  color: transparent;
+}
+.btn-pink{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-weight:800; border-radius:12px; padding:.8rem 1.2rem;
+  background:#F7A9B8; color:#111;
+}
+.btn-pink:hover{ filter:brightness(1.05); transform:translateY(-1px); transition:.15s; }
+.chev{ width:28px; height:28px; border-right:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(45deg); opacity:.7; }
