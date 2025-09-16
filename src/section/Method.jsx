@@ -1,59 +1,52 @@
 // src/section/Method.jsx
 export default function Method() {
   return (
-    <section className="m2" aria-label="Nuevo y divertido">
-      {/* Media */}
-      <div className="m2-media">
-        <picture>
-          {/* móvil primero */}
-          <source
-            srcSet="/method-mobile.jpg"
-            type="image/webp"
-            media="(max-width: 768px)"
-          />
-          <source
-            srcSet="/method-desktop.jpg"
-            type="image/webp"
-            media="(min-width: 769px)"
-          />
-          <img
-            className="m2-img"
-            src="/method-left.jpg"
-            alt="Programa de entrenamiento para mujeres"
-            fetchpriority="high"
-          />
-        </picture>
-        {/* overlay/fade */}
-        <div className="m2-overlay" />
-      </div>
+    <section className="m2">
+      {/* Imagen responsive (desktop / mobile) */}
+      <picture className="m2-media">
+        <source media="(max-width: 767px)" srcSet="/method-left-mobile.jpg" />
+        <img
+          className="m2-bg"
+          src="/method-left.jpg"
+          alt="Programa de 90 días – entrenamientos diarios"
+        />
+      </picture>
+
+      {/* Fade/overlay */}
+      <div className="m2-fade" />
 
       {/* Contenido */}
-      <div className="m2-content">
-        <h3 className="m2-eyebrow">NUEVO &amp; DIVERTIDO</h3>
-
-        <h2 className="m2-outline">
-          <span>ENTRENAMIENTOS</span>
-          <span>CADA DÍA</span>
-        </h2>
-
-        {/* Ribbon diagonal */}
-        <div className="m2-ribbon">
-          <div className="m2-ribbon-line">
-            <strong>CONSÍGUELO AHORA</strong>
-            <small>Desde $250/sesión · Cancela cuando quieras</small>
+      <div className="m2-inner container-outer">
+        <div className="m2-grid">
+          <div className="m2-copy">
+            <h2 className="m2-h1">
+              NUEVO &amp; DIVERTIDO
+              <span className="m2-h1-outline">
+                <br />
+                ENTRENAMIENTOS
+                <br />
+                CADA DÍA
+              </span>
+            </h2>
           </div>
-          <button
-            className="m2-cta"
-            onClick={() => (window.location.href = "/register")}
-          >
-            COMENZAR AHORA
-          </button>
-        </div>
 
-        <p className="m2-body">
-          Entrena, aliméntate y transforma tus hábitos con un método diseñado
-          para que cada día avances hacia la mejor versión de ti misma.
-        </p>
+          {/* Cinta diagonal */}
+          <div className="m2-ribbon">
+            <div className="m2-ribbon-inner">
+              <div>
+                <div className="m2-ribbon-title">Consíguelo ahora</div>
+                <div className="m2-ribbon-sub">Desde $250/sesión · Cancela cuando quieras</div>
+              </div>
+              <a className="m2-ribbon-cta" href="/register">COMENZAR AHORA</a>
+            </div>
+          </div>
+
+          {/* Texto corto debajo */}
+          <p className="m2-body">
+            Entrena, aliméntate y transforma tus hábitos con un método diseñado para que
+            cada día avances hacia la mejor versión de ti misma.
+          </p>
+        </div>
       </div>
     </section>
   );
