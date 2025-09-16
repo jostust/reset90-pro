@@ -221,3 +221,81 @@
   .ribbon-full{ transform: translateX(-50%) rotate(-4deg); width: 138vw; }
   .ribbon-card{ transform: rotate(4deg); }
 }
+/* === BLOQUE 2 (alexia-like) === */
+
+/* Imagen de fondo que cubre todo el ancho con buena posición */
+.method-bg{
+  width:100%;
+  height: clamp(560px, 70vw, 820px);
+  object-fit: cover;
+  object-position: left center;
+  display:block;
+}
+@media (max-width: 767px){
+  .method-bg{
+    height: clamp(620px, 115vw, 980px);
+    object-position: center 30%;
+  }
+}
+
+/* Titulares fluidos con peso y tracking cercano al original */
+.title-fill{
+  font-weight: 900;
+  letter-spacing: .02em;
+  line-height: 1.05;
+  color: #111; /* se ve casi negro sobre el rosa */
+  font-size: clamp(28px, 5.2vw, 56px);
+  text-transform: uppercase;
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.35));
+}
+.title-outline{
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 1.08;
+  font-size: clamp(26px, 4.6vw, 50px);
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,.9);
+  text-stroke: 2px rgba(255,255,255,.9); /* fallback */
+}
+
+/* Ribbon diagonal que cruza toda la pantalla con sombra suave */
+.ribbon{
+  position: relative;
+  left: 50%;
+  width: 120vw;                /* más ancho que la viewport */
+  transform: translateX(-50%) rotate(-6deg);
+  transform-origin: center;
+  background: transparent;     /* el fondo real va en .ribbon-inner */
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,.35));
+}
+.ribbon-inner{
+  background: #141919;         /* negro cálido */
+  border-radius: 10px;
+  padding: clamp(14px, 2.2vw, 20px) clamp(16px, 3.6vw, 32px);
+  border: 1px solid rgba(255,255,255,.08);
+  position: relative;
+}
+
+/* Botón blanco del CTA dentro del ribbon */
+.btn-white{
+  background: #fff;
+  color: #111;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: .9rem 1.35rem;
+  line-height: 1;
+  transition: transform .15s ease, filter .15s ease;
+  box-shadow: 0 4px 0 #0d0f0f, 0 10px 24px rgba(0,0,0,.25);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.btn-white:active{ transform: translateY(1px); }
+.btn-white:hover{ filter: brightness(1.02); }
+
+/* Ajustes de densidad en móvil para evitar desbordes */
+@media (max-width: 767px){
+  .title-fill{ font-size: clamp(26px, 9vw, 40px); }
+  .title-outline{ font-size: clamp(22px, 8vw, 36px); -webkit-text-stroke: 1.6px rgba(255,255,255,.95); }
+  .ribbon{ width: 140vw; transform: translateX(-50%) rotate(-7deg); }
+  .ribbon-inner{ padding: 16px 18px; }
+}
