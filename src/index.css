@@ -43,3 +43,41 @@
 }
 .btn-pink:hover{ filter:brightness(1.05); transform:translateY(-1px); transition:.15s; }
 .chev{ width:28px; height:28px; border-right:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(45deg); opacity:.7; }
+/* === UTILIDADES PARA BLOQUE METHOD === */
+.outline-text {
+  -webkit-text-stroke: 2px rgba(17,17,17,.35);
+  text-stroke: 2px rgba(17,17,17,.35);
+  color: transparent;
+}
+
+.ribbon {
+  position: relative;
+  transform: rotate(-5deg);
+  background: #0f1417; /* negro verdoso */
+  color: #fff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.5);
+}
+
+.ribbon-line {
+  height: 1px;
+  background: rgba(255,255,255,.25);
+  margin-top: 10px;
+}
+
+.ribbon-card {
+  background: #fff;
+  color: #111;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-weight: 800;
+  transform: rotate(5deg); /* compensa la cinta */
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+  display: inline-block;
+}
+
+@media (max-width: 767px) {
+  .ribbon { transform: rotate(-4deg); }
+  .ribbon-card { transform: rotate(4deg); }
+}
