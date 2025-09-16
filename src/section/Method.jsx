@@ -6,9 +6,9 @@ export default function Method() {
     <section className="m2 relative overflow-hidden">
       {/* Fondo full-bleed con <picture> */}
       <picture className="absolute inset-0 block">
-        <source media="(max-width: 767px)" srcSet="/method-left-mobile.jpg" />
+        <source media="(max-width: 767px)" srcSet="/method-mobile.jpg" />
         <img
-          src="/method-left.jpg"
+          src="/method-desktop.jpg"
           alt="Entrenamientos diarios"
           className="m2-bg"
           loading="lazy"
@@ -42,7 +42,7 @@ export default function Method() {
         <div className="m2-ribbon-inner">
           <div className="m2-ribbon-left">
             <div className="m2-ribbon-title">CONSÍGUelo ahora</div>
-            <div className="m2-ribbon-sub">Solo $29.99/mes · Cancela cuando quieras</div>
+            <div className="m2-ribbon-sub">Desde $250/sesión · Cancela cuando quieras</div>
           </div>
           <button className="m2-ribbon-cta">COMENZAR AHORA</button>
         </div>
@@ -51,8 +51,7 @@ export default function Method() {
       {/* Texto de apoyo debajo del ribbon */}
       <div className="relative z-10 mx-auto max-w-5xl px-6 sm:px-8 pt-16 pb-24 md:pt-20 md:pb-28">
         <p className="m2-body">
-          Frescos para casa y gym, comunidad inclusiva y plan de nutrición delicioso.
-          No te aburras nunca más de tu programa de fitness.
+          Entrena, aliméntate y transforma tus hábitos con un método diseñado para que cada día avances hacia la mejor versión de ti misma.
         </p>
       </div>
     </section>
