@@ -43,285 +43,31 @@
 }
 .btn-pink:hover{ filter:brightness(1.05); transform:translateY(-1px); transition:.15s; }
 .chev{ width:28px; height:28px; border-right:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(45deg); opacity:.7; }
-/* === UTILIDADES PARA BLOQUE METHOD === */
-.outline-text {
-  -webkit-text-stroke: 2px rgba(17,17,17,.35);
-  text-stroke: 2px rgba(17,17,17,.35);
-  color: transparent;
-}
 
-.ribbon {
-  position: relative;
-  transform: rotate(-5deg);
-  background: #0f1417; /* negro verdoso */
-  color: #fff;
-  border-radius: 14px;
-  padding: 16px 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.5);
-}
+/* ===== METHOD (bloque 2) – Consolidado ===== */
 
-.ribbon-line {
-  height: 1px;
-  background: rgba(255,255,255,.25);
-  margin-top: 10px;
-}
-
-.ribbon-card {
-  background: #fff;
-  color: #111;
-  border-radius: 10px;
-  padding: 14px 18px;
-  font-weight: 800;
-  transform: rotate(5deg); /* compensa la cinta */
-  box-shadow: 0 10px 25px rgba(0,0,0,.2);
-  display: inline-block;
-}
-
-@media (max-width: 767px) {
-  .ribbon { transform: rotate(-4deg); }
-  .ribbon-card { transform: rotate(4deg); }
-}
-/* ===== Tipografía outline clara (sobre rosa) */
-.outline-light{
-  -webkit-text-stroke: 2px rgba(255,255,255,.65);
-  text-stroke: 2px rgba(255,255,255,.65);
-  color: transparent;
-  letter-spacing: .02em;
-}
-
-/* ===== Cinta diagonal a pantalla completa */
-.ribbon-full{
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%) rotate(-6deg);
-  width: 120vw;                  /* se sale un poco para asegurar full-bleed */
-  background: #0f1417;
-  color: #fff;
-  border-radius: 14px;
-  padding: 16px 20px;
-  box-shadow: 0 18px 45px rgba(0,0,0,.55);
-}
-.ribbon-line{ height:1px; background: rgba(255,255,255,.25); margin-top:10px; }
-.ribbon-card{
-  background:#fff; color:#111; border-radius:10px; padding:14px 18px;
-  font-weight:800; display:inline-block; transform: rotate(6deg);
-  box-shadow: 0 10px 25px rgba(0,0,0,.25);
-}
-@media (max-width: 767px){
-  .ribbon-full{ transform: translateX(-50%) rotate(-4deg); }
-  .ribbon-card{ transform: rotate(4deg); }
-}
-/* ===== Tipografía outline clara (sobre rosa) */
-.outline-light{
-  -webkit-text-stroke: 2px rgba(255,255,255,.65);
-  text-stroke: 2px rgba(255,255,255,.65);
-  color: transparent;
-  letter-spacing: .02em;
-}
-/* ==== METHOD v2 ==== */
-
-/* tamaños fluidos tipo Alexia */
-.title-xxl{ font-size: clamp(2.2rem, 3.2vw + 1rem, 4rem); line-height: 1.02; }
-.title-outline{
-  -webkit-text-stroke: 2.5px rgba(255,255,255,.75);
-  text-stroke: 2.5px rgba(255,255,255,.75);
-  color: transparent;
-  letter-spacing: .02em;
-}
-
-/* contenedor de texto con sombras suaves para legibilidad sobre imagen */
-.title-shadow{ text-shadow: 0 2px 10px rgba(0,0,0,.15); }
-
-/* cinta diagonal full-bleed */
-.ribbon-full{
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%) rotate(-7deg);
-  width: 150vw;                 /* + ancho para asegurar bleed */
-  background: #0f1417;
-  color:#fff;
-  border-radius: 14px;
-  padding: 16px 20px;
-  box-shadow: 0 20px 48px rgba(0,0,0,.55);
-}
-.ribbon-line{height:1px;background:rgba(255,255,255,.25);margin-top:10px;}
-.ribbon-card{
-  background:#fff;color:#111;border-radius:10px;padding:14px 18px;
-  font-weight:800;display:inline-block;transform: rotate(6deg);
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-}
-
-/* fade correcto sobre imagen */
-.method-fade-right {
-  background: linear-gradient(90deg,
-    rgba(247,169,184,0) 0%,
-    rgba(247,169,184,.35) 35%,
-    rgba(247,169,184,.75) 55%,
-    rgba(247,169,184,.95) 72%,
-    rgba(247,169,184,1) 85%,
-    rgba(247,169,184,1) 100%);
-}
-/* móvil: ajustes de tamaños y ángulos */
-@media (max-width: 767px){
-  .title-xxl{ font-size: clamp(1.8rem, 4.8vw + 1rem, 2.6rem); }
-  .title-outline{ -webkit-text-stroke: 2px rgba(255,255,255,.85); text-stroke: 2px rgba(255,255,255,.85); }
-  .ribbon-full{ transform: translateX(-50%) rotate(-4deg); width: 135vw; }
-  .ribbon-card{ transform: rotate(4deg); }
-}
-/* ===== Imagen de fondo en Method */
-.method-img{
-  background-size: cover;
-  background-position: center;
-  filter: saturate(1.02) contrast(1.02);
-}
-
-/* Fade correcto sobre imagen (suave y largo) */
-.method-fade-right{
-  background: linear-gradient(90deg,
-    rgba(247,169,184,0) 0%,
-    rgba(247,169,184,.50) 40%,
-    rgba(247,169,184,.90) 68%,
-    rgba(247,169,184,1) 84%,
-    rgba(247,169,184,1) 100%);
-}
-
-/* Títulos grandes estilo Alexia (fluido + outline grueso) */
-.title-xxl{ font-size: clamp(2.3rem, 3.2vw + 1rem, 4.1rem); line-height: 1.02; }
-.title-outline{
-  -webkit-text-stroke: 2.6px rgba(255,255,255,.78);
-  text-stroke: 2.6px rgba(255,255,255,.78);
-  color: transparent;
-  letter-spacing: .01em;
-}
-.title-shadow{ text-shadow: 0 2px 10px rgba(0,0,0,.14); }
-
-/* Cinta diagonal a pantalla completa (full-bleed) */
-.ribbon-full{
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%) rotate(-6deg);
-  width: 128vw;                 /* se sale para asegurar bleed */
-  background: #0f1417;
-  color:#fff;
-  border-radius: 14px;
-  padding: 16px 20px;
-  box-shadow: 0 20px 48px rgba(0,0,0,.55);
-}
-.ribbon-line{ height:1px; background:rgba(255,255,255,.25); margin-top:10px; }
-.ribbon-card{
-  background:#fff; color:#111; border-radius:10px; padding:14px 18px;
-  font-weight:800; display:inline-block; transform: rotate(6deg);
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-}
-
-/* Responsive: tamaños y ángulos en móvil */
-@media (max-width: 767px){
-  .title-xxl{ font-size: clamp(1.9rem, 4.8vw + 1rem, 2.7rem); }
-  .title-outline{ -webkit-text-stroke: 2.1px rgba(255,255,255,.86); text-stroke: 2.1px rgba(255,255,255,.86); }
-  .ribbon-full{ transform: translateX(-50%) rotate(-4deg); width: 138vw; }
-  .ribbon-card{ transform: rotate(4deg); }
-}
-/* === BLOQUE 2 (alexia-like) === */
-
-/* Imagen de fondo que cubre todo el ancho con buena posición */
-.method-bg{
-  width:100%;
-  height: clamp(560px, 70vw, 820px);
-  object-fit: cover;
-  object-position: left center;
-  display:block;
-}
-@media (max-width: 767px){
-  .method-bg{
-    height: clamp(620px, 115vw, 980px);
-    object-position: center 30%;
-  }
-}
-
-/* Titulares fluidos con peso y tracking cercano al original */
-.title-fill{
-  font-weight: 900;
-  letter-spacing: .02em;
-  line-height: 1.05;
-  color: #111; /* se ve casi negro sobre el rosa */
-  font-size: clamp(28px, 5.2vw, 56px);
-  text-transform: uppercase;
-  filter: drop-shadow(0 1px 0 rgba(255,255,255,.35));
-}
-.title-outline{
-  text-transform: uppercase;
-  font-weight: 900;
-  line-height: 1.08;
-  font-size: clamp(26px, 4.6vw, 50px);
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(255,255,255,.9);
-  text-stroke: 2px rgba(255,255,255,.9); /* fallback */
-}
-
-/* Ribbon diagonal que cruza toda la pantalla con sombra suave */
-.ribbon{
-  position: relative;
-  left: 50%;
-  width: 120vw;                /* más ancho que la viewport */
-  transform: translateX(-50%) rotate(-6deg);
-  transform-origin: center;
-  background: transparent;     /* el fondo real va en .ribbon-inner */
-  filter: drop-shadow(0 10px 28px rgba(0,0,0,.35));
-}
-.ribbon-inner{
-  background: #141919;         /* negro cálido */
-  border-radius: 10px;
-  padding: clamp(14px, 2.2vw, 20px) clamp(16px, 3.6vw, 32px);
-  border: 1px solid rgba(255,255,255,.08);
-  position: relative;
-}
-
-/* Botón blanco del CTA dentro del ribbon */
-.btn-white{
-  background: #fff;
-  color: #111;
-  font-weight: 800;
-  border-radius: 10px;
-  padding: .9rem 1.35rem;
-  line-height: 1;
-  transition: transform .15s ease, filter .15s ease;
-  box-shadow: 0 4px 0 #0d0f0f, 0 10px 24px rgba(0,0,0,.25);
-  text-transform: uppercase;
-  letter-spacing: .06em;
-}
-.btn-white:active{ transform: translateY(1px); }
-.btn-white:hover{ filter: brightness(1.02); }
-
-/* Ajustes de densidad en móvil para evitar desbordes */
-@media (max-width: 767px){
-  .title-fill{ font-size: clamp(26px, 9vw, 40px); }
-  .title-outline{ font-size: clamp(22px, 8vw, 36px); -webkit-text-stroke: 1.6px rgba(255,255,255,.95); }
-  .ribbon{ width: 140vw; transform: translateX(-50%) rotate(-7deg); }
-  .ribbon-inner{ padding: 16px 18px; }
-}
-/* ====== BLOQUE 2 (Method) ====== */
+/* Contenedor del bloque */
 .m2{
-  /* alto mínimo y respiración */
   min-height: 640px;
-  background: #f4aeb7; /* base rosa (se ve bajo el fade) */
+  background: #f4aeb7; /* rosa base bajo el fade */
+  position: relative;
 }
 
+/* Imagen de fondo */
 .m2-bg{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left center;
   display: block;
-  /* asegura que cubra por completo la sección */
   min-height: 640px;
+  filter: saturate(1.02) contrast(1.02);
 }
 
-@media (max-width: 767px){
-  .m2{ min-height: 720px; } /* un poco más alta en móvil para el ribbon */
-  .m2-bg{ min-height: 720px; }
-}
-
-/* Gradiente/fade izquierdo→derecha como Alexia */
+/* Gradiente/fade de izq→der (oscuro a rosa) */
 .m2-fade{
+  position: absolute; inset: 0;
+  pointer-events: none;
   background: linear-gradient(
     90deg,
     rgba(16,19,20,0.85) 0%,
@@ -331,16 +77,26 @@
   );
 }
 
-/* Layout del contenido superior (solo el titular) */
+/* Capa de contenido sobre la imagen+fade */
+.m2-inner{
+  position: relative;
+  z-index: 2;
+}
+
+/* Grid del título */
 .m2-grid{
   display: grid;
   grid-template-columns: 1fr;
   padding-top: clamp(72px, 10vw, 140px);
   padding-bottom: clamp(48px, 6vw, 72px);
+  padding-left: min(6vw, 48px);
+  padding-right: min(6vw, 48px);
 }
+
+/* Texto del titular */
 .m2-copy{ max-width: 860px; }
 
-/* Título principal y líneas outline */
+/* Titular “sólido” */
 .m2-h1{
   font-weight: 900;
   line-height: 1.05;
@@ -349,37 +105,41 @@
   text-shadow: 0 1px 0 rgba(255,255,255,0.08);
   font-size: clamp(28px, 5.2vw, 64px);
 }
+
+/* Líneas outline bajo el sólido */
 .m2-h1-outline{
   display: block;
   margin-top: .25em;
-  -webkit-text-stroke: 2px rgba(255,255,255,0.75);
-  color: transparent;
-  text-shadow: none;
   font-weight: 900;
   letter-spacing: .5px;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.78);
 }
 
-/* Ribbon diagonal que cruza toda la pantalla */
+/* Cinta diagonal full-bleed */
 .m2-ribbon{
   position: relative;
-  z-index: 20;
+  z-index: 3;
   margin-top: clamp(8px, 2vw, 24px);
-  /* que cruce toda la pantalla (un poco más para que sobresalga) */
   width: 120vw;
   left: 50%;
-  transform: translateX(-50%) rotate(-8deg);
+  transform: translateX(-50%) rotate(-7deg);
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,.35));
 }
+
+/* Cuerpo de la cinta */
 .m2-ribbon-inner{
   background: #131819;
   border-radius: 14px;
-  box-shadow: 0 18px 26px rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.08);
   padding: 18px 22px;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 18px;
+  gap: clamp(12px, 2vw, 18px);
 }
-.m2-ribbon-left{ min-width: 0; }
+
+/* Título/sub de la cinta */
 .m2-ribbon-title{
   text-transform: uppercase;
   font-weight: 900;
@@ -389,10 +149,12 @@
 }
 .m2-ribbon-sub{
   margin-top: 6px;
-  opacity: .8;
+  opacity: .85;
   color: #d8dee2;
   font-size: clamp(12px, 1.6vw, 15px);
 }
+
+/* Botón blanco dentro de la cinta */
 .m2-ribbon-cta{
   background: #fff;
   color: #0f1112;
@@ -401,28 +163,36 @@
   font-weight: 900;
   font-size: clamp(12px, 2vw, 18px);
   box-shadow: 0 5px 0 rgba(0,0,0,.15);
-  transform: rotate(6deg); /* leve giro a la tarjeta blanca */
+  transform: rotate(6deg);
   transition: transform .15s ease, filter .15s ease;
+  white-space: nowrap;
 }
-.m2-ribbon-cta:hover{
-  filter: brightness(0.96);
-  transform: rotate(6deg) translateY(-1px);
-}
+.m2-ribbon-cta:hover{ filter: brightness(.98); transform: rotate(6deg) translateY(-1px); }
 
-/* Texto de apoyo */
+/* Texto descriptivo */
 .m2-body{
   color: #0f1112;
   font-size: clamp(14px, 1.4vw, 18px);
   max-width: 920px;
   opacity: .92;
+  margin-top: clamp(18px, 2vw, 24px);
 }
 
-/* Ajustes móviles */
+/* ===== Mobile ===== */
 @media (max-width: 767px){
-  .m2-ribbon{
-    transform: translateX(-50%) rotate(-7.5deg);
-    width: 140vw; /* más ancho en móvil para asegurar el cruce completo */
+  .m2{ min-height: 740px; }
+  .m2-bg{ min-height: 740px; object-position: center 26%; }
+  .m2-fade{
+    background: linear-gradient(
+      90deg,
+      rgba(16,19,20,0.80) 0%,
+      rgba(16,19,20,0.35) 32%,
+      rgba(244,174,183,0.85) 100%
+    );
   }
   .m2-h1{ font-size: clamp(26px, 8vw, 40px); }
-  .m2-h1-outline{ -webkit-text-stroke: 1.6px rgba(255,255,255,0.78); }
+  .m2-h1-outline{ -webkit-text-stroke: 1.6px rgba(255,255,255,0.86); }
+  .m2-ribbon{ width: 140vw; transform: translateX(-50%) rotate(-5.5deg); }
+  .m2-ribbon-inner{ grid-template-columns: 1fr; }
+  .m2-ribbon-cta{ align-self: start; transform: rotate(4deg); }
 }
