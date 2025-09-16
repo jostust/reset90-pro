@@ -25,23 +25,14 @@ export default function Method() {
       <div className="relative z-[1] max-w-[1200px] mx-auto px-4 py-16 md:py-24">
         {/* Títulos: sólido + outline, con mismo ancho de columna que el ref */}
         <div className="max-w-[640px] md:ml-[45%]">
-          <m.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.45 }}
-            className="font-extrabold text-[#111] select-none leading-[1.03] title-shadow"
-          >
-            <span className="block title-xxl tracking-[-0.01em]">
-              NUEVO & DIVERTIDO
-            </span>
-            <span className="block title-xxl title-outline tracking-[0.01em] mt-1">
-              ENTRENAMIENTOS
-            </span>
-            <span className="block title-xxl title-outline tracking-[0.01em] -mt-1">
-              CADA DÍA
-            </span>
-          </m.h2>
+     <m.h2
+  className="font-extrabold text-[#111] select-none leading-[1.03] title-shadow text-right md:text-left"
+>
+  <span className="block title-xxl tracking-[-0.01em]">NUEVO & DIVERTIDO</span>
+  <span className="block title-xxl title-outline tracking-[0.01em] mt-1">
+    ENTRENAMIENTOS CADA DÍA
+  </span>
+</m.h2> 
         </div>
 
         {/* Cinta diagonal full-bleed (cruza toda la pantalla) */}
