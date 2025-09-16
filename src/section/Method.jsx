@@ -1,72 +1,59 @@
-import React from "react";
+/* src/section/Method.jsx */
+import { motion } from "framer-motion";
 
 export default function Method() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#171C1B]">
-      {/* Fondo con imagen + overlay rosa */}
-      <div className="relative">
-        <picture>
-          {/* móvil primero */}
-          <source
-            media="(max-width: 767px)"
-            srcSet="/method-mobile.jpg"
-          />
-          <img
-            src="/method-desktop.jpg"
-            alt="Entrenamiento diario"
-            className="method-bg"
-          />
-        </picture>
+    <section className="m2 relative overflow-hidden">
+      {/* Fondo full-bleed con <picture> */}
+      <picture className="absolute inset-0 block">
+        <source media="(max-width: 767px)" srcSet="/method-left-mobile.jpg" />
+        <img
+          src="/method-left.jpg"
+          alt="Entrenamientos diarios"
+          className="m2-bg"
+          loading="lazy"
+        />
+      </picture>
 
-        {/* overlay rosa degradado derecha -> izquierda */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-[#F7A9B8]/85 via-[#F7A9B8]/65 to-transparent" />
+      {/* Gradiente/fade al estilo Alexia */}
+      <div className="m2-fade absolute inset-0 pointer-events-none" />
 
-        {/* contenedor del contenido */}
-        <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-          <div className="pt-24 pb-14 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-28">
-            {/* TITULARES */}
-            <div className="max-w-[760px] ml-auto">
-              <h2 className="title-fill">
-                NUEVO & DIVERTIDO
-              </h2>
-              <p className="title-outline mt-3">
-                ENTRENAMIENTOS
-                <br className="hidden sm:block" />
-                CADA DÍA
-              </p>
-            </div>
-
-            {/* RIBBON DIAGONAL FULL-WIDTH */}
-            <div className="relative mt-8 sm:mt-10">
-              <div className="ribbon">
-                <div className="ribbon-inner">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full">
-                    <div className="text-white/95 text-[clamp(18px,3vw,22px)] font-extrabold tracking-[0.06em] uppercase">
-                      Consíguelo ahora
-                    </div>
-
-                    <button
-                      className="btn-white"
-                      onClick={() => (window.location.href = "/register")}
-                    >
-                      COMENZAR AHORA
-                    </button>
-                  </div>
-
-                  <div className="mt-3 text-sm sm:text-[15px] text-white/80">
-                    Solo <span className="font-semibold">$29.99/mes</span> · Cancela cuando quieras
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* DESCRIPCIÓN BAJO EL RIBBON */}
-            <div className="max-w-[720px] ml-auto mt-10 sm:mt-12 text-[clamp(16px,2.1vw,18px)] leading-relaxed text-white/90">
-              Frescos para casa y gym, comunidad inclusiva y plan de nutrición
-              delicioso. No te aburras nunca más de tu programa de fitness.
-            </div>
+      {/* Contenido */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8">
+        <div className="m2-grid">
+          <div className="m2-copy">
+            <h2 className="m2-h1">
+              <span className="block">NUEVO &amp; DIVERTIDO</span>
+              <span className="m2-h1-outline">ENTRENAMIENTOS</span>
+              <span className="m2-h1-outline">CADA DÍA</span>
+            </h2>
           </div>
         </div>
+      </div>
+
+      {/* Ribbon diagonal (un único bloque superpuesto) */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5 }}
+        className="m2-ribbon"
+      >
+        <div className="m2-ribbon-inner">
+          <div className="m2-ribbon-left">
+            <div className="m2-ribbon-title">CONSÍGUelo ahora</div>
+            <div className="m2-ribbon-sub">Solo $29.99/mes · Cancela cuando quieras</div>
+          </div>
+          <button className="m2-ribbon-cta">COMENZAR AHORA</button>
+        </div>
+      </motion.div>
+
+      {/* Texto de apoyo debajo del ribbon */}
+      <div className="relative z-10 mx-auto max-w-5xl px-6 sm:px-8 pt-16 pb-24 md:pt-20 md:pb-28">
+        <p className="m2-body">
+          Frescos para casa y gym, comunidad inclusiva y plan de nutrición delicioso.
+          No te aburras nunca más de tu programa de fitness.
+        </p>
       </div>
     </section>
   );
