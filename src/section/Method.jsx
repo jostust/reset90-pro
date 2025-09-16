@@ -4,10 +4,10 @@ export default function Method() {
     <section className="m2">
       {/* Imagen responsive (desktop / mobile) */}
       <picture className="m2-media">
-        <source media="(max-width: 767px)" srcSet="/method-left-mobile.jpg" />
+        <source media="(max-width: 767px)" srcSet="/method-mobile.jpg" />
         <img
           className="m2-bg"
-          src="/method-left.jpg"
+          src="/method-desktop.jpg"
           alt="Programa de 90 días – entrenamientos diarios"
         />
       </picture>
