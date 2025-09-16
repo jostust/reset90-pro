@@ -57,14 +57,9 @@ export default function HeroTop() {
         </m.p>
 
         {/* CTA */}
-        <m.a
-          initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{delay:.2}}
-          href="https://wa.me/XXXXXXXXXXX" target="_blank"
-          className="inline-flex items-center justify-center bg-[#F7A9B8] text-black font-extrabold rounded-xl px-6 py-3"
-        >
-          Comenzar ahora
-        </m.a>
-
+        <m.a href="/register" className="inline-flex items-center justify-center bg-[#F7A9B8] text-black font-extrabold rounded-xl px-6 py-3">
+  Comenzar ahora
+</m.a>
         {/* chevron abajo */}
         <div className="mt-10 flex justify-center">
           <div className="chev rotate-45"></div>
